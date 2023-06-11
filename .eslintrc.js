@@ -10,6 +10,7 @@ module.exports = {
   },
   rules: {
     'class-methods-use-this': 'off',
+    'no-unused-expressions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-param-reassign': 'off',
     camelcase: 'off',
