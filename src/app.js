@@ -2,6 +2,7 @@ import 'dotenv/config';
 
 import express from 'express';
 import path from 'path';
+import cors from 'cors';
 import Youch from 'youch';
 import * as Sentry from '@sentry/node';
 import 'express-async-errors';
@@ -14,6 +15,7 @@ import './database';
 const app = express();
 Sentry.init(sentryConfig);
 app.use(Sentry.Handlers.requestHandler());
+app.use(cors());
 
 app.use(express.json());
 app.use('/files', express.static(path.resolve(__dirname, '..', 'temp', 'uploads')));
